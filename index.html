@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MC Diagnóstico Automotriz</title>
 <link rel="icon" type="image/png" href="assets/img-01-369a8bb875.png">
-<meta name="description" content="MC Diagnóstico Automotriz (Quito, Ecuador): escáneres Jaltest y Fcar, control de emisiones Capelec y QROTECH, centros de revisión técnica vehicular y soluciones de movilidad DKT. Distribuidores oficiales con soporte y capacitación.">
+<meta name="description" content="<meta name="description" content="MC Diagnóstico Automotriz (Quito, Ecuador): escaners Jaltest y Fcar, control de emisiones Capelec y QROTECH, centros de revisión técnica vehicular y soluciones de movilidad DKT. Distribuidores oficiales con soporte y capacitación.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MC Diagnóstico Automotriz">
 <meta property="og:title" content="MC Diagnóstico Automotriz">
-<meta property="og:description" content="Escáneres, control de emisiones, revisión técnica vehicular y movilidad. Distribuidores oficiales en Ecuador.">
+<meta property="og:description" content="<meta property="og:description" content="Escaners, control de emisiones, revisión técnica vehicular y movilidad. Distribuidores oficiales en Ecuador.">
 <meta property="og:image" content="https://mcautomotriz.com/og-image.png">
 <meta property="og:url" content="https://mcautomotriz.com/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MC Diagnóstico Automotriz">
-<meta name="twitter:description" content="Escáneres, control de emisiones, revisión técnica vehicular y movilidad. Distribuidores oficiales en Ecuador.">
+<meta name="twitter:description" content="<meta name="twitter:description" content="Escaners, control de emisiones, revisión técnica vehicular y movilidad. Distribuidores oficiales en Ecuador.">
 <meta name="twitter:image" content="https://mcautomotriz.com/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -605,7 +605,7 @@
   .mtop .mbento{min-height:0;grid-template-rows:190px 190px}
   .mside .mpanel{flex:none}
   @media (max-width:860px){.mtop .mbento{grid-template-rows:170px 170px}}
-  /* escáneres: servicios y datos clave */
+  /* escaners: servicios y datos clave */
   .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
   .svx{display:flex;flex-direction:column;gap:6px;background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:13px;transition:border-color .2s,transform .15s}
   .svx:hover{border-color:color-mix(in srgb,var(--accent) 55%,transparent);transform:translateY(-2px)}
@@ -670,6 +670,83 @@
     .cta{padding:8px 11px}
     .jt .scr-top b{font-size:.64rem;letter-spacing:.08em}
   }
+  /* enlaces de marcas */
+  a.brand-item,a.lbrand{color:inherit;cursor:pointer}
+  a.lbrand{transition:transform .15s,box-shadow .2s}a.lbrand:hover{transform:translateY(-2px);box-shadow:0 8px 20px -10px var(--accent)}
+  /* más información con Emily (sutil) */
+  .ask-emily{display:inline-flex;align-items:center;gap:9px;align-self:flex-start;font-size:.84rem;color:var(--muted);text-decoration:none;
+    padding:8px 2px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;position:relative;z-index:1}
+  .ask-emily svg:first-child{color:var(--wa)}
+  .ask-emily b{color:var(--fg);font-weight:600;transition:color .2s}
+  .ask-emily .ar{transition:transform .2s;opacity:.7}
+  .ask-emily:hover{color:var(--fg);border-color:color-mix(in srgb,var(--accent) 60%,transparent)}
+  .ask-emily:hover b{color:var(--accent)}.ask-emily:hover .ar{transform:translateX(4px);opacity:1}
+  .line .ask-emily{margin-top:2px}
+  .ask-row{display:flex;justify-content:flex-end;margin-top:14px}
+  @media (max-width:560px){.ask-row{justify-content:flex-start}}
+  /* 5. logo más grande */
+  .nav{height:76px}.brand img{height:50px}
+  @media (max-width:1180px){.nav-links.open{top:76px}}
+  @media (max-width:560px){.nav{height:66px}.brand img{height:40px}.nav-links.open{top:66px}}
+  /* línea de revisión: 9 estaciones + información al pasar el mouse */
+  .lane{overflow:visible}
+  .stations{grid-template-columns:repeat(9,1fr);gap:6px}
+  .sti{width:56px;height:56px}
+  .lane-track{top:52px}
+  .stn{font-size:.78rem;max-width:12ch}
+  .station{position:relative;outline:none;cursor:default}
+  .std{position:absolute;bottom:calc(100% - 2px);left:50%;transform:translate(-50%,6px);width:190px;z-index:5;
+    background:var(--bg);color:var(--fg);border:1px solid color-mix(in srgb,var(--accent) 55%,var(--line));border-radius:10px;
+    padding:9px 11px;font-size:.76rem;line-height:1.45;text-align:left;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .18s,transform .18s}
+  .std::after{content:"";position:absolute;top:100%;left:50%;width:10px;height:10px;transform:translate(-50%,-5px) rotate(45deg);
+    background:var(--bg);border-right:1px solid color-mix(in srgb,var(--accent) 55%,var(--line));border-bottom:1px solid color-mix(in srgb,var(--accent) 55%,var(--line))}
+  .station:first-child .std{left:0;transform:translate(0,6px)}.station:first-child .std::after{left:28px}
+  .station:last-child .std{left:auto;right:0;transform:translate(0,6px)}.station:last-child .std::after{left:auto;right:18px}
+  .station:hover .std,.station:focus .std{opacity:1;transform:translate(-50%,0)}
+  .station:first-child:hover .std,.station:first-child:focus .std,.station:last-child:hover .std,.station:last-child:focus .std{transform:translate(0,0)}
+  .station:focus .sti{border-color:var(--accent);color:#1a0d00;background:linear-gradient(135deg,var(--accent),var(--accent-deep))}
+  @media (max-width:1000px){.stn{font-size:.7rem}.sti{width:48px;height:48px}.lane-track{top:48px}}
+  @media (max-width:860px){
+    .stations{grid-template-columns:1fr;gap:12px}
+    .station{display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}
+    .sti{grid-row:1 / 3;width:52px;height:52px}
+    .stn{font-size:.88rem;max-width:none;align-self:end}
+    .std,.station:first-child .std,.station:last-child .std{position:static;opacity:1;transform:none;width:auto;background:none;border:0;box-shadow:none;padding:2px 0 0;color:var(--muted);font-size:.78rem;align-self:start}
+    .std::after{display:none}
+    .station{grid-template-rows:auto auto;align-content:center;row-gap:2px}
+    .stn,.std,.station:first-child .std,.station:last-child .std{align-self:auto}
+    .sti{align-self:center}
+  }
+  /* galería Capelec */
+  .gal-btn{margin-top:16px;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;cursor:pointer;font:inherit;font-weight:600;font-size:.92rem;
+    color:var(--fg);background:transparent;border:1.5px solid color-mix(in srgb,var(--accent) 70%,transparent);border-radius:12px;padding:11px 16px;transition:background .2s,color .2s,transform .15s}
+  .gal-btn svg{color:var(--accent);transition:color .2s}
+  .gal-btn em{font-style:normal;font-size:.74rem;font-weight:500;color:var(--muted);border-left:1px solid var(--line);padding-left:10px;transition:color .2s}
+  .gal-btn:hover{background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#1a0d00;transform:translateY(-2px)}
+  .gal-btn:hover svg,.gal-btn:hover em{color:#1a0d00}
+  .gal{width:min(1040px,calc(100% - 24px));max-height:min(90vh,860px);padding:0;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--fg);box-shadow:var(--shadow)}
+  .gal::backdrop{background:rgba(5,8,12,.78);backdrop-filter:blur(4px)}
+  .gal-in{padding:22px 24px 24px}
+  .gal-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:18px}
+  .gal-top h3{font-size:1.4rem;margin-top:6px}
+  .gal-x{position:static}
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .gthumb{display:flex;flex-direction:column;gap:8px;background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:10px;cursor:pointer;color:inherit;font:inherit;text-align:left;transition:border-color .2s,transform .15s}
+  .gthumb:hover,.gthumb:focus-visible{border-color:var(--accent);transform:translateY(-3px);outline:none}
+  .gimg{background:#fff;border-radius:10px;aspect-ratio:4/3;display:grid;place-items:center;overflow:hidden;outline:1.5px solid color-mix(in srgb,var(--accent) 60%,transparent);outline-offset:-1.5px}
+  .gimg img{max-width:92%;max-height:92%;object-fit:contain}
+  .gcap{font-size:.8rem;font-weight:600;line-height:1.35}
+  .gal-back{background:none;border:0;color:var(--muted);font:inherit;font-size:.85rem;cursor:pointer;padding:0 0 12px}.gal-back:hover{color:var(--accent)}
+  .gal-fig{margin:0;position:relative;background:#fff;border-radius:14px;display:grid;place-items:center;height:min(58vh,520px);outline:1.5px solid color-mix(in srgb,var(--accent) 60%,transparent);outline-offset:-1.5px}
+  .gal-fig img{max-width:88%;max-height:90%;object-fit:contain}
+  .gnav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;font-size:1.6rem;line-height:1;
+    color:#1a0d00;background:linear-gradient(135deg,var(--accent),var(--accent-deep));box-shadow:0 8px 20px -8px var(--accent)}
+  .gprev{left:12px}.gnext{right:12px}
+  .gal-meta{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-size:.95rem}.gal-meta span{color:var(--muted);font-size:.85rem}
+  @media (max-width:760px){.gal-grid{grid-template-columns:1fr 1fr}.gal-in{padding:16px}.gal-top h3{font-size:1.15rem}.gal-fig{height:48vh}.gnav{width:38px;height:38px}}
+  [hidden]{display:none!important}
+  .gal-fig{overflow:hidden}.gal-fig img{position:absolute;inset:0;margin:auto;max-width:86%;max-height:90%;width:auto;height:auto}
+  .gimg{position:relative}.gimg img{position:absolute;inset:0;margin:auto}
 </style>
 </head>
 <body>
@@ -678,7 +755,7 @@
     <a class="brand" href="#inicio" aria-label="MC Diagnóstico Automotriz"><img src="assets/img-02-85657aa571.png" alt="MC Diagnóstico Automotriz"></a>
     <nav class="nav-links" id="navlinks">
       <a href="#nosotros">Nosotros</a>
-      <a href="#diagnostico">Escáneres</a>
+      <a href="#diagnostico">Escaners</a>
       <a href="#emisiones">Emisiones</a>
       <a href="#revision">Revisión técnica</a>
       <a href="#movilidad">Movilidad</a>
@@ -707,7 +784,7 @@
       <div>
         <span class="tag">Equipos y soluciones automotrices</span>
         <h1>Diagnóstico que <span class="u">no deja dudas</span>.</h1>
-        <p class="lead">Escáneres de diagnóstico, control de emisiones, centros de revisión técnica vehicular y soluciones de movilidad. Distribuidores oficiales de marcas internacionales, con soporte y capacitación de MC.</p>
+        <p class="lead">Escaners de diagnóstico, control de emisiones, centros de revisión técnica vehicular y soluciones de movilidad. Distribuidores oficiales de marcas internacionales, con soporte y capacitación de MC.</p>
         <div class="hero-cta">
           <a class="btn btn-wa" id="wa-hero" target="_blank" rel="noopener">
             <svg class="wa-ic" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg>
@@ -738,9 +815,9 @@
   <!-- TRUST -->
   <div class="trust">
     <div class="wrap">
-      <span class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/><path d="M12 3 4 6v6c0 4.5 3 7.5 8 9 5-1.5 8-4.5 8-9V6l-8-3Z"/></svg><b>Distribuidores oficiales</b> de todas nuestras marcas</span>
+      <span class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/><path d="M12 3 4 6v6c0 4.5 3 7.5 8 9 5-1.5 8-4.5 8-9V6l-8-3Z"/></svg><b>Distribuidores oficiales</b> de todas sus marcas</span>
       <span class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 9 18l-5-5"/></svg>Soporte técnico y capacitación de MC</span>
-      <span class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Garantía de fábrica en nuestros equipos</span>
+      <span class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Garantía de fábrica en todos los equipos</span>
     </div>
   </div>
 
@@ -751,12 +828,12 @@
       <div class="about">
         <div class="about-text">
           <span class="tag">Quiénes somos</span>
-          <h2>Cuatro décadas resolviendo lo que otros no pueden diagnosticar.</h2>
-          <p>MC Diagnóstico Automotriz nació del taller: desde <b>1979</b> en el mantenimiento vehicular y desde <b>2003</b> representando en Ecuador marcas internacionales de equipos. Esa combinación es poco común: conocemos el equipo porque también conocemos el vehículo.</p>
-          <p class="muted">Hoy trabajamos en cuatro líneas y atendemos a talleres, flotas, concesionarios, centros de revisión técnica y municipios. Cada equipo llega con soporte técnico y capacitación de MC.</p>
+          <h2>Más de cuatro décadas de experiencia en diagnóstico automotriz.</h2>
+          <p>MC Diagnóstico Automotriz nació del taller: desde <b>1979</b> en el mantenimiento vehicular y desde <b>2003</b> representando en Ecuador marcas internacionales de equipos. Esa trayectoria le permite a MC conocer a fondo tanto el equipo como el vehículo.</p>
+          <p class="muted">Hoy MC trabaja en cuatro líneas y atiende a talleres, flotas, concesionarios, centros de revisión técnica y municipios. Cada equipo llega con soporte técnico y capacitación de MC.</p>
         </div>
         <div class="pill-grid">
-          <a class="pill" href="#diagnostico"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 8h7M7 11h4"/><path d="M8 20h8M12 16v4"/></svg></div><div class="t">Escáneres</div><div class="l">Diagnóstico con Jaltest y Fcar</div></a>
+          <a class="pill" href="#diagnostico"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 8h7M7 11h4"/><path d="M8 20h8M12 16v4"/></svg></div><div class="t">Escaners</div><div class="l">Diagnóstico con Jaltest y Fcar</div></a>
           <a class="pill" href="#emisiones"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 20c0-3 2-4 2-7a3 3 0 0 0-3-3M12 20c0-3 2-4 2-7a3 3 0 0 0-3-3M19 20c0-3 2-4 2-7a3 3 0 0 0-3-3"/></svg></div><div class="t">Emisiones</div><div class="l">Analizadores y opacímetros Capelec y QROTECH</div></a>
           <a class="pill" href="#revision"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9l9-5 9 5v12"/><path d="M7 21v-6h10v6M7 12h10"/></svg></div><div class="t">Revisión técnica</div><div class="l">Centros de revisión vehicular llave en mano</div></a>
           <a class="pill" href="#movilidad"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div class="t">Movilidad</div><div class="l">Sistemas de información de tráfico DKT</div></a>
@@ -771,31 +848,31 @@
       <div class="sec-head">
         <span class="tag">Líneas de negocio</span>
         <h2>Cuatro líneas, un mismo respaldo.</h2>
-        <p>Diagnóstico, control de emisiones, revisión técnica vehicular y movilidad. Representamos cada marca de forma oficial y acompañamos cada equipo con soporte y capacitación de MC.</p>
+        <p>Diagnóstico, control de emisiones, revisión técnica vehicular y movilidad. MC representa cada marca de forma oficial y acompaña cada equipo con soporte técnico y capacitación.</p>
       </div>
 
-      <!-- 1. Escáneres -->
+      <!-- 1. Escaners -->
       <div class="lblock" id="diagnostico">
-        <div class="lhead"><div><h3>Escáneres y diagnóstico</h3><p>Equipos, accesorios, servicio técnico y diagnóstico a vehículos livianos, pesados y maquinaria.</p></div><div class="lbrands"><span class="lbrand"><img src="assets/img-08-3396b90174.png" alt="Jaltest"></span><span class="lbrand"><img src="assets/img-09-c7909d9cb4.png" alt="Fcar"></span></div></div>
+        <div class="lhead"><div><h3>Escaners y diagnóstico</h3><p>Equipos, accesorios, servicio técnico y diagnóstico a vehículos livianos, pesados y maquinaria.</p></div><div class="lbrands"><a class="lbrand" href="https://www.jaltest.com/es/" target="_blank" rel="noopener" aria-label="Sitio web de Jaltest"><img src="assets/img-08-3396b90174.png" alt="Jaltest"></a><a class="lbrand" href="https://fcarglobal.com/" target="_blank" rel="noopener" aria-label="Sitio web de Fcar"><img src="assets/img-09-c7909d9cb4.png" alt="Fcar"></a></div></div>
         <div class="lines">
-        <!-- Escáneres: categoría general -->
+        <!-- Escaners: categoría general -->
         <article class="line full hub">
           <div class="hub-grid">
             <div class="line-media"><img src="assets/img-10-4f6ccea18d.jpg" alt="Diagnóstico de motor con el software Jaltest"><span class="line-badge"><i></i>DIAGNÓSTICO MULTIMARCA</span></div>
             <div class="hub-body">
               <div class="line-head">
                 <span class="line-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 8h7M7 11h4"/><path d="M8 20h8M12 16v4"/></svg></span>
-                <div><h3>Escáneres automotrices</h3><div class="k">VENTA DE EQUIPOS Y ACCESORIOS</div></div>
+                <div><h3>Escaners automotrices</h3><div class="k">VENTA DE EQUIPOS Y ACCESORIOS</div></div>
               </div>
-              <p class="lead2">Escáneres profesionales para leer y borrar códigos, ver datos en vivo, hacer funciones especiales y reseteos. Trabajamos dos plataformas según el tipo de vehículo que usted atiende:</p>
+              <p class="lead2">Escaners profesionales para leer y borrar códigos, ver datos en vivo, hacer funciones especiales y reseteos. MC trabaja con dos plataformas, según el tipo de vehículo que usted atiende:</p>
               <div class="pick">
                 <a class="pick-item" href="#fcar"><b>Fcar 9S-G</b><span>Livianos y pesados en un solo equipo, con buena cobertura de vehículos chinos, híbridos y eléctricos.</span><em>Ver Fcar</em></a>
                 <a class="pick-item" href="#jaltest"><b>Jaltest</b><span>Vehículo industrial y flotas: camiones, buses, maquinaria, agrícola y marino.</span><em>Ver Jaltest</em></a>
               </div>
               <div class="svc">
-                <div class="svx"><span class="svi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span><b>Equipos y accesorios</b><span>Escáneres, conectores y accesorios</span></div>
+                <div class="svx"><span class="svi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span><b>Equipos y accesorios</b><span>Escaners, conectores y accesorios</span></div>
                 <div class="svx"><span class="svi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 1 5.4-5.4l-2.7 2.7-2-2 2.7-2.7Z"/></svg></span><b>Servicio técnico</b><span>Mantenimiento de equipos y diagnóstico a vehículos</span></div>
-                <div class="svx"><span class="svi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 11h7M8.5 14h4"/></svg></span><b>Asesoría</b><span>Le ayudamos a elegir según su taller o flota</span></div>
+                <div class="svx"><span class="svi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 11h7M8.5 14h4"/></svg></span><b>Asesoría</b><span>MC le asesora según su taller o flota</span></div>
               </div>
             </div>
           </div>
@@ -814,6 +891,8 @@
           </div>
           <p class="note">Incluye reportes de diagnóstico, asistencia remota y funciones especiales de servicio.</p>
           <div class="specs"><div class="spec"><b>12V / 24V</b><span>dos interfaces con conectores directos</span></div><div class="spec"><b>2 años</b><span>de actualizaciones incluidas</span></div><div class="spec"><b>12 meses</b><span>de garantía de fábrica</span></div></div>
+        
+          <a class="ask-emily" data-topic="Fcar 9S-G" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg><span>Más información, <b>contacte a Emily</b></span><svg class="ar" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
         <!-- Jaltest -->
@@ -829,6 +908,8 @@
           </div>
           <p class="note">Incluye palas, motoniveladoras, retroexcavadoras, minicargadoras, grúas telescópicas, tractores, cosechadoras y motores fuera de borda, entre otros. Incluye información técnica de fábrica por modelo, capacitación inicial y Jaltest University.</p>
           <div class="specs"><div class="spec"><b>12 meses</b><span>de garantía de fábrica</span></div><div class="spec"><b>Vida útil</b><span>soporte en el uso del equipo</span></div><div class="spec"><b>GRP Web</b><span>gestión de taller y flota</span></div></div>
+        
+          <a class="ask-emily" data-topic="Jaltest" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg><span>Más información, <b>contacte a Emily</b></span><svg class="ar" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
         </div>
@@ -836,7 +917,7 @@
 
       <!-- 2. Emisiones -->
       <div class="lblock" id="emisiones">
-        <div class="lhead"><div><h3>Control de emisiones</h3><p>Analizadores de gases y opacímetros para talleres, concesionarios y centros de revisión. Capelec (Francia) y QROTECH (Corea).</p></div><div class="lbrands"><span class="lbrand"><img src="assets/img-13-66f19be5ad.png" alt="Capelec"></span><span class="lbrand"><img src="assets/img-14-7066e656d8.png" alt="Qrotech"></span></div></div>
+        <div class="lhead"><div><h3>Control de emisiones</h3><p>Analizadores de gases y opacímetros para talleres, concesionarios y centros de revisión. Capelec (Francia) y QROTECH (Corea).</p></div><div class="lbrands"><a class="lbrand" href="https://www.capelec.com/" target="_blank" rel="noopener" aria-label="Sitio web de Capelec"><img src="assets/img-13-66f19be5ad.png" alt="Capelec"></a><span class="lbrand"><img src="assets/img-14-7066e656d8.png" alt="Qrotech"></span></div></div>
         <div class="prod-grid">
           <article class="prod"><div class="prod-img"><img src="assets/img-15-64a730b37a.jpg" alt="Capelec CAP3201" class="fill"></div><span class="prod-brand">Capelec</span><h4>CAP3201</h4><p>Analizador de 4 gases (CO, CO₂, O₂ y HC) para vehículos a gasolina, con factor lambda, AFR e impresora.</p></article>
           <article class="prod"><div class="prod-img"><img src="assets/img-16-46f7a9d35f.jpg" alt="Capelec CAP3030" class="fill"></div><span class="prod-brand">Capelec</span><h4>CAP3030</h4><p>Opacímetro para vehículos a diésel: mide la opacidad de los gases de escape.</p></article>
@@ -849,11 +930,12 @@
           <div class="inc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Calibración con gas patrón</b><span>en MC, una vez al año según el uso</span></div></div>
           <div class="inc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 1 5.4-5.4l-2.7 2.7-2-2 2.7-2.7Z"/></svg><div><b>Repuestos</b><span>filtros, sondas, mangueras y sensores de oxígeno</span></div></div>
         </div>
+        <div class="ask-row"><a class="ask-emily" data-topic="equipos de control de emisiones Capelec y QROTECH" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg><span>Más información, <b>contacte a Emily</b></span><svg class="ar" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
 
       <!-- 3. Revisión técnica -->
       <div class="lblock" id="revision">
-        <div class="lhead"><div><h3>Revisión técnica vehicular</h3><p>Centros de revisión técnica vehicular llave en mano, con equipos Capelec.</p></div><div class="lbrands"><span class="lbrand"><img src="assets/img-13-66f19be5ad.png" alt="Capelec"></span></div></div>
+        <div class="lhead"><div><h3>Revisión técnica vehicular</h3><p>Centros de revisión técnica vehicular llave en mano, con equipos Capelec.</p></div><div class="lbrands"><a class="lbrand" href="https://www.capelec.com/" target="_blank" rel="noopener" aria-label="Sitio web de Capelec"><img src="assets/img-13-66f19be5ad.png" alt="Capelec"></a></div></div>
         <div class="crtv-grid">
           <div class="crtv-photos">
             <figure class="rphoto"><img src="assets/img-19-52cd7e5e11.jpg" alt="Centro de revisión técnica vehicular con líneas Capelec instaladas"></figure>
@@ -861,13 +943,14 @@
           </div>
           <div class="crtv-body">
             <h4>Su centro de revisión, de principio a fin</h4>
-            <p>Acompañamos el proyecto completo: galpón y oficinas, equipos mecatrónicos, software de calificación, instalación, capacitación y puesta en marcha.</p>
+            <p>MC acompaña el proyecto completo: galpón y oficinas, equipos mecatrónicos, software de calificación, instalación, capacitación y puesta en marcha.</p>
             <div class="cfeats">
               <div class="cfeat"><span class="cfi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M14 9l2 2"/></svg></span><div><b>Llave en mano</b><span>Obra, equipos, software y puesta en marcha</span></div></div>
               <div class="cfeat"><span class="cfi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-6h6v6"/></svg></span><div><b>Propia o concesión</b><span>Arranque con administración propia o por concesión</span></div></div>
               <div class="cfeat"><span class="cfi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><path d="M12 3 4 6v6c0 4.5 3 7.5 8 9 5-1.5 8-4.5 8-9V6l-8-3Z"/></svg></span><div><b>ISO 17020</b><span>Acompañamiento hacia la acreditación</span></div></div>
               <div class="cfeat"><span class="cfi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 1 5.4-5.4l-2.7 2.7-2-2 2.7-2.7Z"/></svg></span><div><b>Calibración y postventa</b><span>Soporte técnico de MC durante la operación</span></div></div>
             </div>
+            <button type="button" class="gal-btn" id="open-gal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><span>Ver galería Capelec</span><em>7 equipos</em></button>
           </div>
         </div>
 
@@ -877,13 +960,14 @@
         <div class="sub">Equipos de la línea · así recorre el vehículo la revisión</div>
         <div class="lane">
           <div class="lane-track" aria-hidden="true"><span class="lane-car"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15v-3l2-4.5A2 2 0 0 1 6.8 6h8.6a2 2 0 0 1 1.7.9L20 11l1 1v3h-2"/><path d="M3 15h2M9 15h6"/><circle cx="7" cy="15.5" r="2"/><circle cx="17" cy="15.5" r="2"/><path d="M5 11h15"/></svg></span></div>
-          <ol class="stations"><li class="station"><span class="sti"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v18M16 3v18"/><path d="M4 9l4 3-4 3M20 9l-4 3 4 3"/></svg></span><span class="stn">Alineación al paso</span></li><li class="station"><span class="sti"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3"/><path d="M7 5h10l-10 3.5h10L7 12h10L7 15.5h10L7 19h10"/></svg></span><span class="stn">Banco de suspensión</span></li><li class="station"><span class="sti"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M17 5.5a9 9 0 0 1 2.5 4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg></span><span class="stn">Frenómetro</span></li><li class="station"><span class="sti"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20c0-3 2-4 2-7a3 3 0 0 0-3-3M12 20c0-3 2-4 2-7a3 3 0 0 0-3-3M19 20c0-3 2-4 2-7a3 3 0 0 0-3-3"/></svg></span><span class="stn">Análisis de gases</span></li><li class="station"><span class="sti"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg></span><span class="stn">Sonómetro</span></li><li class="station"><span class="sti"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"/></svg></span><span class="stn">Profundidad de neumáticos</span></li></ol>
+          <ol class="stations"><li class="station" tabindex="0"><span class="sti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v18M16 3v18"/><path d="M4 9l4 3-4 3M20 9l-4 3 4 3"/></svg></span><span class="stn">Alineación al paso</span><span class="std" role="tooltip">Mide la desviación lateral de las ruedas al pasar sobre la placa.</span></li><li class="station" tabindex="0"><span class="sti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3"/><path d="M7 5h10l-10 3.5h10L7 12h10L7 15.5h10L7 19h10"/></svg></span><span class="stn">Banco de suspensión</span><span class="std" role="tooltip">Evalúa la adherencia y la eficacia de los amortiguadores.</span></li><li class="station" tabindex="0"><span class="sti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M17 5.5a9 9 0 0 1 2.5 4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg></span><span class="stn">Frenómetro</span><span class="std" role="tooltip">Mide la fuerza de frenado y el desequilibrio entre ruedas.</span></li><li class="station" tabindex="0"><span class="sti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><path d="m9.5 5.5 2.5-2.5 2.5 2.5M9.5 18.5l2.5 2.5 2.5-2.5M5.5 9.5 3 12l2.5 2.5M18.5 9.5 21 12l-2.5 2.5"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></span><span class="stn">Detector de holguras</span><span class="std" role="tooltip">Detecta juegos en dirección, rótulas y suspensión.</span></li><li class="station" tabindex="0"><span class="sti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20c0-3 2-4 2-7a3 3 0 0 0-3-3M12 20c0-3 2-4 2-7a3 3 0 0 0-3-3M19 20c0-3 2-4 2-7a3 3 0 0 0-3-3"/></svg></span><span class="stn">Análisis de gases</span><span class="std" role="tooltip">Mide CO, CO₂, O₂ y HC en vehículos a gasolina.</span></li><li class="station" tabindex="0"><span class="sti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1-.6-7.96A5.5 5.5 0 0 1 17 8.5a3.5 3.5 0 0 1 .5 6.96"/><path d="M8 21h8M10 18h7"/></svg></span><span class="stn">Opacidad</span><span class="std" role="tooltip">Mide la opacidad del humo en vehículos a diésel.</span></li><li class="station" tabindex="0"><span class="sti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6a6 6 0 0 0 0 12h2V6H9Z"/><path d="M15 8l5-2M15 12h6M15 16l5 2"/></svg></span><span class="stn">Luxómetro</span><span class="std" role="tooltip">Verifica la intensidad y la orientación de las luces.</span></li><li class="station" tabindex="0"><span class="sti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg></span><span class="stn">Sonómetro</span><span class="std" role="tooltip">Mide el nivel de ruido del escape.</span></li><li class="station" tabindex="0"><span class="sti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"/></svg></span><span class="stn">Profundidad de neumáticos</span><span class="std" role="tooltip">Comprueba el labrado mínimo de los neumáticos.</span></li></ol>
         </div>
+        <div class="ask-row"><a class="ask-emily" data-topic="centros de revisión técnica vehicular" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg><span>Más información, <b>contacte a Emily</b></span><svg class="ar" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
 
       <!-- 4. Movilidad -->
       <div class="lblock" id="movilidad">
-        <div class="lhead"><div><h3>Movilidad y tráfico</h3><p>Sistemas de información de tráfico para planificar ciudades más seguras y ordenadas.</p></div><div class="lbrands"><span class="lbrand"><img src="assets/img-21-6c74c7c6af.png" alt="DKT"></span></div></div>
+        <div class="lhead"><div><h3>Movilidad y tráfico</h3><p>Sistemas de información de tráfico para planificar ciudades más seguras y ordenadas.</p></div><div class="lbrands"><a class="lbrand" href="https://www.dkt-international.com/es/" target="_blank" rel="noopener" aria-label="Sitio web de DKT"><img src="assets/img-21-6c74c7c6af.png" alt="DKT"></a></div></div>
         <div class="mtop">
           <div class="mbento">
             <figure class="mb mb-bus"><img src="assets/img-22-036bfc42b0.jpg" alt="Equipo DKT midiendo el tráfico de buses en una vía"><figcaption><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>Medición de flujo vehicular</figcaption></figure>
@@ -899,13 +983,14 @@
               <div class="sub">Modalidad</div>
               <div class="mmod">
                 <div class="mm"><span class="mmi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span><div><b>Venta de equipos</b><span>Su institución adquiere los equipos y los opera con capacitación de MC.</span></div></div>
-                <div class="mm"><span class="mmi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16"/><path d="m7 15 4-4 3 3 5-6"/><circle cx="19" cy="8" r="1"/></svg></span><div><b>Servicio de medición de flujo</b><span>Medimos en los puntos que necesite y le entregamos la información.</span></div></div>
+                <div class="mm"><span class="mmi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16"/><path d="m7 15 4-4 3 3 5-6"/><circle cx="19" cy="8" r="1"/></svg></span><div><b>Servicio de medición de flujo</b><span>MC realiza la medición en los puntos que usted requiera y le entrega la información.</span></div></div>
               </div>
             </div>
           </div>
         </div>
         <div class="sub">Qué hacemos</div>
         <div class="mcaps"><div class="mcap"><span class="mci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span><b>Medición de flujo</b><span>Conteo de vehículos y peatones por vía y por horario.</span></div><div class="mcap"><span class="mci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15v-3l2-4.5A2 2 0 0 1 6.8 6h8.6a2 2 0 0 1 1.7.9L20 11l1 1v3h-2"/><path d="M3 15h2M9 15h6"/><circle cx="7" cy="15.5" r="2"/><circle cx="17" cy="15.5" r="2"/></svg></span><b>Clasificación vehicular</b><span>Identifica el tipo de vehículo que circula.</span></div><div class="mcap"><span class="mci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg></span><b>Trayectorias</b><span>Cómo se mueve el tráfico en cruces, redondeles e intercambiadores.</span></div><div class="mcap"><span class="mci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6v6H9zM9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span><b>IA aplicada al tránsito</b><span>Análisis automático de video para detectar situaciones de tráfico.</span></div><div class="mcap"><span class="mci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="11" rx="2"/><path d="M12 15v6M8 21h8M7 8h6M7 11h10"/></svg></span><b>Señalética digital</b><span>Mensajes y avisos dinámicos en la vía.</span></div><div class="mcap"><span class="mci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 9a4 4 0 0 1 0 6M12 7.5a7 7 0 0 1 0 9"/></svg></span><b>NFC y RFID</b><span>Identificación de vehículos y control de accesos.</span></div></div>
+        <div class="ask-row"><a class="ask-emily" data-topic="soluciones de movilidad DKT" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg><span>Más información, <b>contacte a Emily</b></span><svg class="ar" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
 
     </div>
@@ -916,16 +1001,16 @@
     <div class="wrap">
       <div class="sec-head">
         <span class="tag">Distribuidores oficiales de</span>
-        <h2>Marcas que respaldamos en Ecuador.</h2>
+        <h2>Marcas que MC representa en Ecuador.</h2>
       </div>
     </div>
     <div class="marquee">
       <div class="track" id="track">
-        <div class="brand-item"><div class="panel"><img src="assets/img-08-3396b90174.png" alt="Jaltest"></div><span>Diagnóstico de vehículo industrial</span></div>
-        <div class="brand-item"><div class="panel"><img src="assets/img-09-c7909d9cb4.png" alt="Fcar"></div><span>Escáner multimarca</span></div>
-        <div class="brand-item"><div class="panel"><img src="assets/img-13-66f19be5ad.png" alt="Capelec"></div><span>Emisiones y revisión técnica</span></div>
-        <div class="brand-item"><div class="panel"><img src="assets/img-14-7066e656d8.png" alt="QROTECH"></div><span>Control de emisiones</span></div>
-        <div class="brand-item"><div class="panel"><img src="assets/img-21-6c74c7c6af.png" alt="DKT"></div><span>Movilidad y tráfico</span></div>
+        <a class="brand-item" href="https://www.jaltest.com/es/" target="_blank" rel="noopener" aria-label="Sitio web de Jaltest"><div class="panel"><img src="assets/img-08-3396b90174.png" alt="Jaltest"></div><span>Diagnóstico de vehículo industrial</span></a>
+        <a class="brand-item" href="https://fcarglobal.com/" target="_blank" rel="noopener" aria-label="Sitio web de Fcar"><div class="panel"><img src="assets/img-09-c7909d9cb4.png" alt="Fcar"></div><span>Escáner multimarca</span></a>
+        <a class="brand-item" href="https://www.capelec.com/" target="_blank" rel="noopener" aria-label="Sitio web de Capelec"><div class="panel"><img src="assets/img-13-66f19be5ad.png" alt="Capelec"></div><span>Emisiones y revisión técnica</span></a>
+        <a class="brand-item" href="https://www.qrotech.com/main" target="_blank" rel="noopener" aria-label="Sitio web de QROTECH"><div class="panel"><img src="assets/img-14-7066e656d8.png" alt="QROTECH"></div><span>Control de emisiones</span></a>
+        <a class="brand-item" href="https://www.dkt-international.com/es/" target="_blank" rel="noopener" aria-label="Sitio web de DKT"><div class="panel"><img src="assets/img-21-6c74c7c6af.png" alt="DKT"></div><span>Movilidad y tráfico</span></a>
       </div>
     </div>
   </section>
@@ -937,7 +1022,7 @@
       <div class="contact-intro">
         <span class="tag">Contacto</span>
         <h2>¿Listo para equipar su taller o flota?</h2>
-        <p>Escríbanos por WhatsApp y Emily, nuestra asistente, le ayuda a elegir el equipo correcto para su operación.</p>
+        <p>Escriba por WhatsApp a Emily, asistente virtual de MC, quien le ayudará a elegir el equipo adecuado para su operación.</p>
         <ul class="feats">
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Respuesta inmediata por WhatsApp</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Asesoría para elegir el equipo según su taller o flota</li>
@@ -951,7 +1036,7 @@
       </div>
       <aside class="contact-cta">
         <h3>Converse con Emily</h3>
-        <p>Nuestra asistente por WhatsApp le responde al instante, le arma la ficha del equipo que busca y le conecta con un asesor cuando lo necesite.</p>
+        <p>La asistente de MC le responde al instante por WhatsApp, le prepara la ficha técnica del equipo que busca y le pone en contacto con un asesor cuando lo requiera.</p>
         <div class="emily">
           <img class="av" src="assets/img-27-9f11a0492a.png" alt="Emily">
           <div><b>Emily · MC Diagnóstico Automotriz</b><span>En línea · responde en segundos</span></div>
@@ -967,7 +1052,7 @@
   <div class="wrap foot-grid">
     <div class="fcol fbrand">
       <img class="flogo" src="assets/img-02-85657aa571.png" alt="MC Diagnóstico Automotriz">
-      <p>Escáneres de diagnóstico, control de emisiones, revisión técnica vehicular y movilidad. Desde 1979.</p>
+      <p>Escaners de diagnóstico, control de emisiones, revisión técnica vehicular y movilidad. Desde 1979.</p>
       <div class="hsocials">
       <a href="https://www.instagram.com/mc.diagnostico.automotriz" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
       <a href="https://www.facebook.com/mcdiagnosticoautomotriz/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9a1 1 0 0 1 1-1Z"/></svg></a>
@@ -975,7 +1060,7 @@
     </div>
     </div>
     <nav class="fcol" aria-label="Navegación"><b>Navegación</b><a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#lineas">Líneas de negocio</a><a href="#marcas">Marcas</a><a href="#contacto">Contacto</a></nav>
-    <div class="fcol"><b>Líneas</b><a href="#diagnostico">Escáneres y diagnóstico</a><a href="#emisiones">Control de emisiones</a><a href="#revision">Revisión técnica vehicular</a><a href="#movilidad">Movilidad y tráfico</a></div>
+    <div class="fcol"><b>Líneas</b><a href="#diagnostico">Escaners y diagnóstico</a><a href="#emisiones">Control de emisiones</a><a href="#revision">Revisión técnica vehicular</a><a href="#movilidad">Movilidad y tráfico</a></div>
     <div class="fcol"><b>Ubicación</b>
       <span class="floc"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Huachi N63-290 y Figueroa, Quito, Ecuador</span>
       <a class="floc" href="https://www.google.com/maps/search/?api=1&query=Huachi+N63-290+y+Figueroa+Quito+Ecuador" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg>Ver en Google Maps</a>
@@ -991,17 +1076,30 @@
   </div>
 </footer>
 
+<dialog id="galeria" class="gal" aria-labelledby="gal-t">
+  <div class="gal-in">
+    <div class="gal-top"><div><span class="tag">Revisión técnica vehicular</span><h3 id="gal-t">Galería de equipos Capelec</h3></div>
+      <button class="priv-x gal-x" type="button" aria-label="Cerrar" data-gclose>×</button></div>
+    <div class="gal-grid" id="gal-grid"><button type="button" class="gthumb" data-i="0"><span class="gimg"><img src="assets/gal-01-6446e3ad44.jpg" alt="Alineador al paso para vehículos ligeros" loading="lazy"></span><span class="gcap">Alineador al paso para vehículos ligeros</span></button><button type="button" class="gthumb" data-i="1"><span class="gimg"><img src="assets/gal-02-c0934bbedb.jpg" alt="Alineador al paso para vehículos ligeros + anchos" loading="lazy"></span><span class="gcap">Alineador al paso para vehículos ligeros + anchos</span></button><button type="button" class="gthumb" data-i="2"><span class="gimg"><img src="assets/gal-03-32b0968004.jpg" alt="Banco de suspensiones para vehículos ligeros" loading="lazy"></span><span class="gcap">Banco de suspensiones para vehículos ligeros</span></button><button type="button" class="gthumb" data-i="3"><span class="gimg"><img src="assets/gal-04-9a8b25a4c6.jpg" alt="Banco de suspensiones para vehículos ligeros + anchos" loading="lazy"></span><span class="gcap">Banco de suspensiones para vehículos ligeros + anchos</span></button><button type="button" class="gthumb" data-i="4"><span class="gimg"><img src="assets/gal-05-24883389f9.jpg" alt="Frenómetro para vehículos ligeros" loading="lazy"></span><span class="gcap">Frenómetro para vehículos ligeros</span></button><button type="button" class="gthumb" data-i="5"><span class="gimg"><img src="assets/gal-06-2598b9be5d.jpg" alt="Regloscopio electrónico experto" loading="lazy"></span><span class="gcap">Regloscopio electrónico experto</span></button><button type="button" class="gthumb" data-i="6"><span class="gimg"><img src="assets/gal-07-faa922ee24.jpg" alt="Equipo autónomo combinado" loading="lazy"></span><span class="gcap">Equipo autónomo combinado</span></button></div>
+    <div class="gal-view" id="gal-view" hidden>
+      <button type="button" class="gal-back" data-gback>← Volver a la galería</button>
+      <figure class="gal-fig"><button type="button" class="gnav gprev" aria-label="Anterior" data-gstep="-1">‹</button>
+        <img id="gal-big" src="assets/gal-01-6446e3ad44.jpg" alt=""><button type="button" class="gnav gnext" aria-label="Siguiente" data-gstep="1">›</button></figure>
+      <div class="gal-meta"><b id="gal-cap"></b><span id="gal-num"></span></div>
+    </div>
+  </div>
+</dialog>
 <dialog id="privacidad" class="priv" aria-labelledby="priv-t">
   <div class="priv-in">
     <button class="priv-x" type="button" aria-label="Cerrar" data-close>×</button>
     <h3 id="priv-t">Aviso de privacidad</h3>
     <p class="priv-d">Última actualización: octubre de 2026</p>
     <p><b>Responsable.</b> MC Diagnóstico Automotriz, con domicilio en Quito, Ecuador, es responsable del tratamiento de los datos que se obtienen a través de este sitio web.</p>
-    <p><b>Datos de navegación.</b> Usamos Google Analytics, que emplea cookies para generar estadísticas sobre el uso del sitio: páginas visitadas, tipo de dispositivo, ubicación aproximada y desde dónde llegó la visita. Esta información es estadística y no la usamos para identificarle personalmente. Puede bloquear las cookies desde la configuración de su navegador.</p>
-    <p><b>Contacto por WhatsApp.</b> Al escribirnos por WhatsApp, los datos que comparta (como su nombre, número de teléfono y consulta) se usan únicamente para atender su solicitud, enviarle información o cotizaciones y darle seguimiento. La primera atención la brinda Emily, nuestra asistente virtual automatizada, y cuando hace falta le conecta con un asesor de MC.</p>
-    <p><b>No vendemos sus datos.</b> Solo los compartimos con los proveedores tecnológicos necesarios para operar el sitio y la atención (por ejemplo, Google y WhatsApp).</p>
-    <p><b>Sus derechos.</b> De acuerdo con la Ley Orgánica de Protección de Datos Personales del Ecuador, puede solicitar el acceso, la rectificación, la eliminación o la oposición al tratamiento de sus datos escribiéndonos al WhatsApp 0982595499.</p>
-    <p><b>Cambios.</b> Podemos actualizar este aviso. La versión vigente siempre estará publicada en este sitio.</p>
+    <p><b>Datos de navegación.</b> MC utiliza Google Analytics, que emplea cookies para generar estadísticas sobre el uso del sitio: páginas visitadas, tipo de dispositivo, ubicación aproximada y desde dónde llegó la visita. Esta información es estadística y MC no la utiliza para identificarle personalmente. Puede bloquear las cookies desde la configuración de su navegador.</p>
+    <p><b>Contacto por WhatsApp.</b> Al escribir a MC por WhatsApp, los datos que comparta (como su nombre, número de teléfono y consulta) se usan únicamente para atender su solicitud, enviarle información o cotizaciones y darle seguimiento. La primera atención la brinda Emily, asistente virtual automatizada de MC, y cuando hace falta le conecta con un asesor de MC.</p>
+    <p><b>MC no vende sus datos.</b> Solo los comparte con los proveedores tecnológicos necesarios para operar el sitio y la atención (por ejemplo, Google y WhatsApp).</p>
+    <p><b>Sus derechos.</b> De acuerdo con la Ley Orgánica de Protección de Datos Personales del Ecuador, puede solicitar el acceso, la rectificación, la eliminación o la oposición al tratamiento de sus datos escribiendo al WhatsApp 0982595499.</p>
+    <p><b>Cambios.</b> MC puede actualizar este aviso. La versión vigente siempre estará publicada en este sitio.</p>
   </div>
 </dialog>
 
@@ -1009,7 +1107,7 @@
 <a class="fab" id="wa-fab" target="_blank" rel="noopener" aria-label="Escríbele a Emily por WhatsApp">
   <img class="fab-face" src="assets/img-27-9f11a0492a.png" alt="">
   <span class="fab-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg></span>
-  <span class="fab-txt"><b>¡Escríbeme por aquí! 👋</b><span>Emily · Asistente MC</span></span>
+  <span class="fab-txt"><b>Escríbame por aquí 👋</b><span>Emily · Asistente MC</span></span>
 </a>
 
 <script>
@@ -1045,6 +1143,29 @@
     if(!d||!b) return;
     b.addEventListener("click",function(){ if(d.showModal) d.showModal(); else d.setAttribute("open",""); });
     d.addEventListener("click",function(e){ if(e.target===d||e.target.hasAttribute("data-close")) d.close(); });
+  })();
+  (function(){
+    document.querySelectorAll(".ask-emily").forEach(function(a){
+      var msg="Hola Emily, vengo desde la web de MC Diagnóstico Automotriz y quisiera más información sobre "+a.getAttribute("data-topic")+".";
+      a.href="https://wa.me/"+EMILY_WHATSAPP+"?text="+encodeURIComponent(msg);
+      a.addEventListener("click",function(){ if(window.gtag) gtag("event","contacto_whatsapp",{boton:"mas_info",tema:a.getAttribute("data-topic")}); });
+    });
+  })();
+  (function(){
+    var d=document.getElementById("galeria"), ob=document.getElementById("open-gal"); if(!d||!ob) return;
+    var th=[].slice.call(d.querySelectorAll(".gthumb")), grid=document.getElementById("gal-grid"), view=document.getElementById("gal-view"),
+        big=document.getElementById("gal-big"), cap=document.getElementById("gal-cap"), num=document.getElementById("gal-num"), cur=0;
+    function show(i){ cur=(i+th.length)%th.length; var im=th[cur].querySelector("img"); big.src=im.src; big.alt=im.alt; cap.textContent=im.alt; num.textContent=(cur+1)+" / "+th.length; grid.hidden=true; view.hidden=false; var n=d.querySelector(".gnext"); if(n) n.focus({preventScroll:true}); }
+    function back(){ view.hidden=true; grid.hidden=false; }
+    ob.addEventListener("click",function(){ back(); if(d.showModal) d.showModal(); else d.setAttribute("open",""); if(window.gtag) gtag("event","ver_galeria",{marca:"capelec"}); });
+    th.forEach(function(b,i){ b.addEventListener("click",function(){ show(i); }); });
+    d.addEventListener("click",function(e){ var t=e.target;
+      if(t===d||t.hasAttribute("data-gclose")) d.close();
+      else if(t.hasAttribute("data-gback")) back();
+      else if(t.hasAttribute("data-gstep")) show(cur+parseInt(t.getAttribute("data-gstep"),10)); });
+    document.addEventListener("keydown",function(e){ if(!d.open||view.hidden) return; if(e.key==="ArrowRight") show(cur+1); if(e.key==="ArrowLeft") show(cur-1); });
+    var sx=null; view.addEventListener("touchstart",function(e){ sx=e.touches[0].clientX; },{passive:true});
+    view.addEventListener("touchend",function(e){ if(sx===null) return; var dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>40) show(cur+(dx<0?1:-1)); sx=null; });
   })();
   /* ==== GOOGLE ANALYTICS (GA4) — pega tu ID entre las comillas, ej. "G-AB12CD34EF" ==== */
   var GA_ID = "G-SH0SZ112WV";
