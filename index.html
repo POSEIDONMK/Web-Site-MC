@@ -1148,18 +1148,29 @@ function gtag(){ dataLayer.push(arguments); }
       gtag("consent","update",{ ad_storage:ads, ad_user_data:ads, ad_personalization:ads, analytics_storage:an });
       dataLayer.push({ event:"consent_update", consent:v });
     }
-    function choose(v){ try{ localStorage.setItem("mc_consent",v); }catch(e){} apply(v); bar.hidden=true; }
+    var MC_META_ID = "1780147923241629", MC_CLARITY_ID = ""; /* Clarity: pegar aquí el Project ID cuando exista */
+    function trackers(v){
+      if(v==="all" && MC_META_ID && !window.fbq){
+        !function(f,b,e,u,n,t,s){n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=u;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+        fbq("init",MC_META_ID); fbq("track","PageView");
+      }
+      if(v!=="essential" && MC_CLARITY_ID && !window.clarity){
+        (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",MC_CLARITY_ID);
+      }
+    }
+    function choose(v){ try{ localStorage.setItem("mc_consent",v); }catch(e){} apply(v); trackers(v); bar.hidden=true; }
     document.getElementById("cb-yes").addEventListener("click",function(){ choose("all"); });
     document.getElementById("cb-no").addEventListener("click",function(){ choose("essential"); });
     var pb=document.getElementById("cb-priv"), pd=document.getElementById("privacidad");
     if(pb&&pd) pb.addEventListener("click",function(){ if(pd.showModal) pd.showModal(); else pd.setAttribute("open",""); });
     var oc=document.getElementById("open-cookies"); if(oc) oc.addEventListener("click",function(){ bar.hidden=false; });
     if(!saved()) bar.hidden=false;
+    trackers(saved()||"default");
 
     /* clics medibles: WhatsApp, mapa y redes. GA4 ya recibe "contacto_whatsapp"; el dataLayer es para Tag Manager (Ads, Meta, Clarity) */
     document.addEventListener("click",function(e){
       var a=e.target.closest&&e.target.closest("a"); if(!a||!a.href) return; var h=a.href;
-      if(h.indexOf("wa.me")>-1){ dataLayer.push({ event:"cta_whatsapp", boton:a.id||"mas_info", tema:a.getAttribute("data-topic")||"" }); }
+      if(h.indexOf("wa.me")>-1){ dataLayer.push({ event:"cta_whatsapp", boton:a.id||"mas_info", tema:a.getAttribute("data-topic")||"" }); if(window.fbq) fbq("track","Contact",{ boton:a.id||"mas_info" }); }
       else if(h.indexOf("google.com/maps")>-1){ dataLayer.push({ event:"cta_mapa" }); gtag("event","clic_mapa"); }
       else if(/instagram\.com|facebook\.com|tiktok\.com/.test(h)){ dataLayer.push({ event:"cta_red_social", red:h.split("/")[2] }); }
     });
