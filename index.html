@@ -4,6 +4,21 @@
 <meta name="facebook-domain-verification" content="e24xtpqfliyestwf8qnezjzg3wfqr2" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+/* ==== CONTROL DE ETIQUETAS · Consent Mode v2 + Google Tag Manager ====
+   Pega el ID del contenedor entre las comillas, ej. "GTM-ABC1234". Vacío = GTM desactivado. */
+var MC_GTM_ID = "GTM-MMKQQDRF";
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+(function(){
+  var c = null; try { c = localStorage.getItem("mc_consent"); } catch(e){}
+  var ads = c === "all" ? "granted" : "denied";
+  gtag("consent","default",{ ad_storage:ads, ad_user_data:ads, ad_personalization:ads, analytics_storage: c === "essential" ? "denied" : "granted", wait_for_update:500 });
+  if (MC_GTM_ID) {
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer",MC_GTM_ID);
+  }
+})();
+</script>
 <title>MC Diagnóstico Automotriz | Escáneres, Emisiones y Revisión Técnica en Quito</title>
 <link rel="icon" type="image/png" href="assets/img-01-369a8bb875.png">
 <meta name="description" content="MC Diagnóstico Automotriz (Quito, Ecuador): escaners Jaltest y Fcar, control de emisiones Capelec y QROTECH, centros de revisión técnica vehicular y soluciones de movilidad DKT. Distribuidores oficiales con soporte y capacitación.">
@@ -12,7 +27,7 @@
 <link rel="canonical" href="https://mcautomotriz.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutomotiveBusiness","name":"MC Diagnóstico Automotriz","url":"https://mcautomotriz.com/","image":"https://mcautomotriz.com/og-image.png","description":"Escáneres Jaltest y Fcar, control de emisiones Capelec y QROTECH, centros de revisión técnica vehicular y soluciones de movilidad DKT en Quito, Ecuador.","address":{"@type":"PostalAddress","streetAddress":"Huachi N63-290 y Figueroa","addressLocality":"Quito","addressCountry":"EC"}}</script>
 <meta property="og:title" content="MC Diagnóstico Automotriz">
-<meta property="og:description" content="<meta property="og:description" content="Escaners, control de emisiones, revisión técnica vehicular y movilidad. Distribuidores oficiales en Ecuador.">
+<meta property="og:description" content="Escaners, control de emisiones, revisión técnica vehicular y movilidad. Distribuidores oficiales en Ecuador.">
 <meta property="og:image" content="https://mcautomotriz.com/og-image.png">
 <meta property="og:url" content="https://mcautomotriz.com/">
 <meta name="twitter:card" content="summary_large_image">
@@ -750,9 +765,19 @@
   [hidden]{display:none!important}
   .gal-fig{overflow:hidden}.gal-fig img{position:absolute;inset:0;margin:auto;max-width:86%;max-height:90%;width:auto;height:auto}
   .gimg{position:relative}.gimg img{position:absolute;inset:0;margin:auto}
+  /* ---------- aviso de cookies ---------- */
+  #cookie-bar{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:80;max-width:540px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;font-size:.88rem;line-height:1.5;color:var(--fg)}
+  #cookie-bar[hidden]{display:none}
+  #cookie-bar p{margin:0}
+  #cookie-bar .cb-link{background:none;border:0;padding:0;color:var(--accent);text-decoration:underline;cursor:pointer;font:inherit}
+  #cookie-bar .cb-btns{display:flex;gap:10px;flex-wrap:wrap}
+  #cookie-bar .cb-btns button{flex:1 1 140px;padding:11px 16px;border-radius:999px;font:inherit;font-weight:600;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--fg)}
+  #cookie-bar .cb-btns #cb-yes{background:var(--accent);border-color:var(--accent);color:#1a0d00}
+  @media (max-width:640px){#cookie-bar{left:10px;right:10px;max-width:none}}
 </style>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMKQQDRF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header>
   <div class="wrap nav">
     <a class="brand" href="#inicio" aria-label="MC Diagnóstico Automotriz"><img src="assets/img-02-85657aa571.png" alt="MC Diagnóstico Automotriz"></a>
@@ -1074,6 +1099,7 @@
     <div class="wrap">
       <span>© <span id="yr"></span> MC Diagnóstico Automotriz · Todos los derechos reservados</span>
       <button type="button" class="priv-link" id="open-priv">Aviso de privacidad</button>
+      <button type="button" class="priv-link" id="open-cookies">Preferencias de cookies</button>
       <a class="poseidon" href="#inicio" aria-label="Elaborado por Poseidon"><img src="assets/img-28-34cd492ee8.png" alt="Poseidon"><span class="pt"><b>Elaborado por Poseidon</b><span>Derechos reservados</span></span></a>
     </div>
   </div>
@@ -1096,16 +1122,49 @@
   <div class="priv-in">
     <button class="priv-x" type="button" aria-label="Cerrar" data-close>×</button>
     <h3 id="priv-t">Aviso de privacidad</h3>
-    <p class="priv-d">Última actualización: octubre de 2026</p>
-    <p><b>Responsable.</b> MC Diagnóstico Automotriz, con domicilio en Quito, Ecuador, es responsable del tratamiento de los datos que se obtienen a través de este sitio web.</p>
-    <p><b>Datos de navegación.</b> MC utiliza Google Analytics, que emplea cookies para generar estadísticas sobre el uso del sitio: páginas visitadas, tipo de dispositivo, ubicación aproximada y desde dónde llegó la visita. Esta información es estadística y MC no la utiliza para identificarle personalmente. Puede bloquear las cookies desde la configuración de su navegador.</p>
+    <p class="priv-d">Última actualización: noviembre de 2026</p>
+    <p><b>Responsable.</b> MC Diagnóstico Automotriz, con domicilio en Huachi N63-290 y Figueroa, Quito, Ecuador, es responsable del tratamiento de los datos que se obtienen a través de este sitio web.</p>
+    <p><b>Cookies y medición.</b> Este sitio usa cookies y herramientas de terceros para entender cómo se usa y para mejorar la publicidad de MC: Google Analytics y Microsoft Clarity (estadísticas de uso: páginas visitadas, tipo de dispositivo, ubicación aproximada y origen de la visita), y Google Ads y Meta (Facebook e Instagram) para medir y mejorar anuncios. Las de publicidad solo se activan si usted las acepta en el aviso de cookies. MC no las utiliza para identificarle personalmente.</p>
+    <p><b>Cómo cambiar su elección.</b> Puede aceptar o rechazar las cookies cuando aparece el aviso y cambiar su decisión en cualquier momento con el botón «Preferencias de cookies» al pie de la página. También puede bloquearlas desde la configuración de su navegador.</p>
     <p><b>Contacto por WhatsApp.</b> Al escribir a MC por WhatsApp, los datos que comparta (como su nombre, número de teléfono y consulta) se usan únicamente para atender su solicitud, enviarle información o cotizaciones y darle seguimiento. La primera atención la brinda Emily, asistente virtual automatizada de MC, y cuando hace falta le conecta con un asesor de MC.</p>
-    <p><b>MC no vende sus datos.</b> Solo los comparte con los proveedores tecnológicos necesarios para operar el sitio y la atención (por ejemplo, Google y WhatsApp).</p>
+    <p><b>MC no vende sus datos.</b> Solo los comparte con los proveedores tecnológicos necesarios para operar el sitio, la atención y la publicidad (por ejemplo, Google, Meta, Microsoft y WhatsApp).</p>
     <p><b>Sus derechos.</b> De acuerdo con la Ley Orgánica de Protección de Datos Personales del Ecuador, puede solicitar el acceso, la rectificación, la eliminación o la oposición al tratamiento de sus datos escribiendo al WhatsApp 0982595499.</p>
     <p><b>Cambios.</b> MC puede actualizar este aviso. La versión vigente siempre estará publicada en este sitio.</p>
   </div>
 </dialog>
 
+
+<div id="cookie-bar" role="dialog" aria-label="Preferencias de cookies" hidden>
+  <p>Usamos cookies para medir las visitas y mejorar nuestra publicidad. Puede aceptarlas o rechazarlas. Más información en el <button type="button" class="cb-link" id="cb-priv">aviso de privacidad</button>.</p>
+  <div class="cb-btns"><button type="button" id="cb-no">Rechazar</button><button type="button" id="cb-yes">Aceptar</button></div>
+</div>
+<script>
+  /* ==== COOKIES + EVENTOS DE CLIC (dataLayer) ==== */
+  (function(){
+    var bar=document.getElementById("cookie-bar"); if(!bar) return;
+    function saved(){ try{ return localStorage.getItem("mc_consent"); }catch(e){ return null; } }
+    function apply(v){
+      var ads = v==="all" ? "granted" : "denied", an = v==="essential" ? "denied" : "granted";
+      gtag("consent","update",{ ad_storage:ads, ad_user_data:ads, ad_personalization:ads, analytics_storage:an });
+      dataLayer.push({ event:"consent_update", consent:v });
+    }
+    function choose(v){ try{ localStorage.setItem("mc_consent",v); }catch(e){} apply(v); bar.hidden=true; }
+    document.getElementById("cb-yes").addEventListener("click",function(){ choose("all"); });
+    document.getElementById("cb-no").addEventListener("click",function(){ choose("essential"); });
+    var pb=document.getElementById("cb-priv"), pd=document.getElementById("privacidad");
+    if(pb&&pd) pb.addEventListener("click",function(){ if(pd.showModal) pd.showModal(); else pd.setAttribute("open",""); });
+    var oc=document.getElementById("open-cookies"); if(oc) oc.addEventListener("click",function(){ bar.hidden=false; });
+    if(!saved()) bar.hidden=false;
+
+    /* clics medibles: WhatsApp, mapa y redes. GA4 ya recibe "contacto_whatsapp"; el dataLayer es para Tag Manager (Ads, Meta, Clarity) */
+    document.addEventListener("click",function(e){
+      var a=e.target.closest&&e.target.closest("a"); if(!a||!a.href) return; var h=a.href;
+      if(h.indexOf("wa.me")>-1){ dataLayer.push({ event:"cta_whatsapp", boton:a.id||"mas_info", tema:a.getAttribute("data-topic")||"" }); }
+      else if(h.indexOf("google.com/maps")>-1){ dataLayer.push({ event:"cta_mapa" }); gtag("event","clic_mapa"); }
+      else if(/instagram\.com|facebook\.com|tiktok\.com/.test(h)){ dataLayer.push({ event:"cta_red_social", red:h.split("/")[2] }); }
+    });
+  })();
+</script>
 
 <a class="fab" id="wa-fab" target="_blank" rel="noopener" aria-label="Escríbele a Emily por WhatsApp">
   <img class="fab-face" src="assets/img-27-9f11a0492a.png" alt="">
