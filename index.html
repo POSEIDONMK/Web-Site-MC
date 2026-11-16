@@ -19,6 +19,33 @@ function gtag(){ dataLayer.push(arguments); }
   }
 })();
 </script>
+<script>
+/* ==== ORIGEN DE LA VISITA + LÍNEA DE NEGOCIO ====
+   Detecta de dónde llegó el visitante (anuncio de Google, Facebook, Instagram, buscador, directo...) y lo agrega al mensaje de WhatsApp
+   y a los eventos. Usa solo sessionStorage (no es cookie de seguimiento). */
+var MC_ATTR=(function(){
+  var st={}; try{ st=JSON.parse(sessionStorage.getItem("mc_attr")||"{}"); }catch(e){}
+  var p=new URLSearchParams(location.search), src=(p.get("utm_source")||"").toLowerCase(), med=(p.get("utm_medium")||"").toLowerCase();
+  var camp=(p.get("utm_campaign")||"").toLowerCase().replace(/[^a-z0-9_-]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40);
+  var ref=""; try{ ref=new URL(document.referrer).hostname.toLowerCase(); }catch(e){}
+  var paid=/paid|cpc|ppc|cpm|ads|pago/.test(med), f=null;
+  if(p.get("gclid")||p.get("gbraid")||p.get("wbraid")||(src==="google"&&paid)) f="google-ads";
+  else if(src) f=(paid&&!/-ads$/.test(src))?src+"-ads":src;
+  if(f===null){
+    if(st.f) return st;
+    if(ref&&ref.indexOf(location.hostname||"~")<0){
+      if(/google\./.test(ref)) f="google-organico"; else if(/bing\.|duckduckgo|yahoo\./.test(ref)) f="buscador";
+      else if(/instagram\./.test(ref)) f="instagram"; else if(/facebook\.|fb\.com/.test(ref)) f="facebook";
+      else if(/tiktok\./.test(ref)) f="tiktok"; else if(/youtube\.|youtu\.be/.test(ref)) f="youtube"; else f="referido";
+    } else f="directo";
+  }
+  var r={f:f,c:camp}; try{ sessionStorage.setItem("mc_attr",JSON.stringify(r)); }catch(e){} return r;
+})();
+var MC_REF="\n(ref: web-"+MC_ATTR.f+(MC_ATTR.c?" · "+MC_ATTR.c:"")+")";
+var MC_LINEAS={"fcar 9s-g":"diagnostico","jaltest":"diagnostico","equipos de control de emisiones capelec y qrotech":"emisiones","centros de revisión técnica vehicular":"revision-tecnica","soluciones de movilidad dkt":"movilidad"};
+function mcLinea(tema,el){ var l=MC_LINEAS[(tema||"").toLowerCase()]; if(l) return l; var b=el&&el.closest?el.closest(".lblock"):null; return b?b.id.replace("revision","revision-tecnica"):"general"; }
+function mcParams(o){ o.fuente=MC_ATTR.f; o.campana=MC_ATTR.c||"(ninguna)"; return o; }
+</script>
 <title>MC Diagnóstico Automotriz | Escáneres, Emisiones y Revisión Técnica en Quito</title>
 <link rel="icon" type="image/png" href="assets/img-01-369a8bb875.png">
 <meta name="description" content="MC Diagnóstico Automotriz (Quito, Ecuador): escaners Jaltest y Fcar, control de emisiones Capelec y QROTECH, centros de revisión técnica vehicular y soluciones de movilidad DKT. Distribuidores oficiales con soporte y capacitación.">
@@ -1167,10 +1194,15 @@ function gtag(){ dataLayer.push(arguments); }
     if(!saved()) bar.hidden=false;
     trackers(saved()||"default");
 
+    /* interés por línea de negocio: se registra 1 vez por sesión cuando el visitante llega a leer cada línea */
+    if("IntersectionObserver" in window){
+      var seen={}, io=new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting&&!seen[x.target.id]){ seen[x.target.id]=1; var l=mcLinea("",x.target); gtag("event","ver_linea",mcParams({linea:l})); dataLayer.push(mcParams({event:"ver_linea",linea:l})); } }); },{threshold:0.45});
+      document.querySelectorAll(".lblock").forEach(function(b){ io.observe(b); });
+    }
     /* clics medibles: WhatsApp, mapa y redes. GA4 ya recibe "contacto_whatsapp"; el dataLayer es para Tag Manager (Ads, Meta, Clarity) */
     document.addEventListener("click",function(e){
       var a=e.target.closest&&e.target.closest("a"); if(!a||!a.href) return; var h=a.href;
-      if(h.indexOf("wa.me")>-1){ dataLayer.push({ event:"cta_whatsapp", boton:a.id||"mas_info", tema:a.getAttribute("data-topic")||"" }); if(window.fbq) fbq("track","Contact",{ boton:a.id||"mas_info" }); }
+      if(h.indexOf("wa.me")>-1){ var tm=a.getAttribute("data-topic")||"", ln=mcLinea(tm,a); dataLayer.push(mcParams({ event:"cta_whatsapp", boton:a.id||"mas_info", tema:tm, linea:ln })); if(window.fbq) fbq("track","Contact",{ boton:a.id||"mas_info", linea:ln, fuente:MC_ATTR.f }); }
       else if(h.indexOf("google.com/maps")>-1){ dataLayer.push({ event:"cta_mapa" }); gtag("event","clic_mapa"); }
       else if(/instagram\.com|facebook\.com|tiktok\.com/.test(h)){ dataLayer.push({ event:"cta_red_social", red:h.split("/")[2] }); }
     });
@@ -1187,7 +1219,7 @@ function gtag(){ dataLayer.push(arguments); }
   var EMILY_WHATSAPP = "593982595499"; /* 0982595499 */
   var EMILY_MSG = "Hola Emily 👋, vengo desde la web de MC Diagnóstico Automotriz y quiero información.";
   (function(){
-    var link = "https://wa.me/" + EMILY_WHATSAPP + "?text=" + encodeURIComponent(EMILY_MSG);
+    var link = "https://wa.me/" + EMILY_WHATSAPP + "?text=" + encodeURIComponent(EMILY_MSG + MC_REF);
     ["wa-nav","wa-hero","wa-contact","wa-fab","wa-foot"].forEach(function(id){var el=document.getElementById(id);if(el)el.href=link;});
     document.getElementById("yr").textContent = new Date().getFullYear();
     var menu=document.getElementById("menu"), links=document.getElementById("navlinks");
@@ -1220,8 +1252,8 @@ function gtag(){ dataLayer.push(arguments); }
   (function(){
     document.querySelectorAll(".ask-emily").forEach(function(a){
       var msg="Hola Emily, vengo desde la web de MC Diagnóstico Automotriz y quisiera más información sobre "+a.getAttribute("data-topic")+".";
-      a.href="https://wa.me/"+EMILY_WHATSAPP+"?text="+encodeURIComponent(msg);
-      a.addEventListener("click",function(){ if(window.gtag) gtag("event","contacto_whatsapp",{boton:"mas_info",tema:a.getAttribute("data-topic")}); });
+      a.href="https://wa.me/"+EMILY_WHATSAPP+"?text="+encodeURIComponent(msg+MC_REF);
+      a.addEventListener("click",function(){ if(window.gtag) gtag("event","contacto_whatsapp",mcParams({boton:"mas_info",tema:a.getAttribute("data-topic"),linea:mcLinea(a.getAttribute("data-topic"),a)})); });
     });
   })();
   (function(){
@@ -1248,7 +1280,7 @@ function gtag(){ dataLayer.push(arguments); }
     window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);}; gtag("js",new Date()); gtag("config",GA_ID);
     /* cada clic a WhatsApp se registra como evento "contacto_whatsapp", con el botón que se usó */
     ["wa-nav","wa-hero","wa-contact","wa-fab","wa-foot"].forEach(function(id){
-      var el=document.getElementById(id); if(el) el.addEventListener("click",function(){ gtag("event","contacto_whatsapp",{boton:id}); });
+      var el=document.getElementById(id); if(el) el.addEventListener("click",function(){ gtag("event","contacto_whatsapp",mcParams({boton:id,linea:mcLinea("",el)})); });
     });
   })();
 </script>
